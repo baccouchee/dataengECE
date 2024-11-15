@@ -42,7 +42,7 @@ Le consommateur Spark lit les données du topic Kafka, les transforme et les sto
 - Fichier : [kafka_spark_consumer.py](kafka_spark_consumer.py)
 - Commande pour lancer :
   ```sh
-  spark-submit kafka_spark_consumer.py
+  python kafka_spark_consumer.py
   ```
 
 ### Flask API
