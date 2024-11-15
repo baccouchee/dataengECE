@@ -59,6 +59,26 @@ services:
     networks:
       - my_network
 
+  # Grafana pour le dashboarding
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - my_network
+    depends_on:
+      - cassandra
+
+  # Flask API pour interagir avec Cassandra
+  flask-api:
+    build: ./flask-api
+    ports:
+      - "5000:5000"
+    networks:
+      - my_network
+    depends_on:
+      - cassandra
+
 networks:
   my_network:
     driver: bridge
