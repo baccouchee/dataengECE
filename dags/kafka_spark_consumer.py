@@ -15,6 +15,7 @@ kafka_df = spark.readStream \
     .option("kafka.bootstrap.servers", "localhost:9092") \
     .option("subscribe", "stock-market-data") \
     .option("startingOffsets", "earliest") \
+    .option("failOnDataLoss", "false") \
     .load()
 
 # Définition du schéma des données boursières
